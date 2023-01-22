@@ -1,0 +1,32 @@
+
+
+// for radio button
+//main
+//enum lang { English , Arabic }
+//lang? _lang = lang.English;
+
+     //Column(
+             // children: <Widget>[
+               // ListTile(
+                 // title: const Text('English', style: TextStyle(color: Colors.white,fontFamily:'afnan')),
+                  //leading: Radio<lang>(
+                    //value: lang.English,
+                    //groupValue: _lang,
+                    //onChanged: (lang? value) {
+                      //setState(() {
+                        //_lang = value;
+                        //text = 'Hello';
+                      //});
+                    //},
+                  //),
+                //),
+                //ListTile(
+                  //title: const Text('العــربية',style: TextStyle(color: Colors.white,fontFamily: 'afnan')),
+                  //leading: Radio<lang>(
+                    //value: lang.Arabic,
+                    //groupValue: _lang,
+                   // onChanged: (lang? value) {
+                     // setState(() {
+                       // _lang = value;
+                       // text = 'مرحبـًا' ;
+                      //});
