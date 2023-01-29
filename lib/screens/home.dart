@@ -7,14 +7,14 @@ import 'package:gp/NavBar.dart';
 
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class home extends StatefulWidget {
+  const home({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<home> {
   late PageController _pageController;
   int _currentPage = 0;
 

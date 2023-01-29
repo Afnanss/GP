@@ -1,5 +1,8 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gp/Models/Models.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -21,6 +24,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: Column(
         children: <Widget>[
+
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: Text(
@@ -60,17 +64,35 @@ class _DetailsScreenState extends State<DetailsScreen> {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: Text(
-                " ${widget.data.text}",
+                " ",
                 style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
 
-              ),//هنا بسوي الصفحه الثانيه
+              )
+              ,//هنا بسوي الصفحه الثانيه
 
             ),
           ),
-        ],
+
+    Expanded(
+
+    flex: 2,
+    child: Padding(
+    padding: const EdgeInsets.only(bottom: 20),
+    child: Text(
+    " ${widget.data.loc}",
+    textAlign: TextAlign.center,
+
+    style: const TextStyle(
+    color: Colors.black,
+    fontSize: 24,
+
+    fontWeight: FontWeight.bold),
+
+    ),
+    ))],
       ),
     );
   }
