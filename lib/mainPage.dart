@@ -13,7 +13,6 @@ class mainPage extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 124, 111, 88),
         appBar: AppBar(
 
-
           title: Text("Search for destination" ,style: TextStyle(fontSize: 16)),
 
           backgroundColor: Color.fromARGB(255, 238, 234, 226),

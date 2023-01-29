@@ -10,7 +10,6 @@ class slide extends StatefulWidget {
   @override
   _slideState createState() => _slideState();
 }
-
 class _slideState extends State<slide> {
   final player = AudioPlayer();
 
