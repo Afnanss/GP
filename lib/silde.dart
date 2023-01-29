@@ -5,7 +5,6 @@ import 'package:k/main.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 
-
 class slide extends StatefulWidget {
   @override
   _slideState createState() => _slideState();

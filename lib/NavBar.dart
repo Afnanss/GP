@@ -35,6 +35,7 @@ class NavBar extends StatelessWidget {
             title: Text('Settings'),
             onTap: () => null,
           ),
+
         ],
       ),
     );
