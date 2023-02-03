@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:k/silde.dart';
+import 'package:gp/slide.dart';
 
 String dropdownvalue = 'English';
 var items = [
@@ -110,12 +110,12 @@ class _MyAppState extends State<MyApp> {
                         onChanged:(String? newValue) {
                           setState(() {
                             dropdownvalue = newValue!;
-                             text = newValue;
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => slide()),
-                                );
-                              }
+                            text = newValue;
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => slide()),
+                            );
+                          }
                           );
                         },
                       ),
