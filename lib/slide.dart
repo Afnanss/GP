@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-import 'package:gp/screens/home.dart';
+
 import 'package:gp/main.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:gp/NearBy.dart';
 
 
 class slide extends StatefulWidget {
@@ -48,8 +49,14 @@ class _slideState extends State<slide> {
                           onSubmit:  ()  {
                             const Duration(seconds: 1);
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => const home()));
+                              context,
+                              MaterialPageRoute(builder: (context) => Stack(children: const <Widget> [
+                                NearBy(),
+                                Page52State(),
+                              ]
+                              ),
+                              ),
+                            );
 
 
 

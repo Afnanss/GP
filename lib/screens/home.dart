@@ -1,9 +1,9 @@
 import 'dart:math';
-
 import 'package:gp/Models/Models.dart';
-import 'package:gp/screens/details.dart';
+import 'package:gp/pic1.dart';
+import 'package:gp/Map.dart';
 import 'package:flutter/material.dart';
-import 'package:gp/NavBar.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 
 
@@ -13,7 +13,6 @@ class home extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<home> {
   late PageController _pageController;
   int _currentPage = 0;
@@ -33,21 +32,53 @@ class _HomeScreenState extends State<home> {
     _pageController.dispose();
   }
 
+  var _currentIndex = 0;
+  final _build = const <Widget>[home(),Map(),pic1()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
-      backgroundColor: Color.fromRGBO(53, 50, 49,100),
+      bottomNavigationBar:  SalomonBottomBar(
+        currentIndex: _currentIndex,
+        onTap: (i) => setState(() => _currentIndex = i),
+        items: [
+          SalomonBottomBarItem(
+            icon: const Icon(
+              Icons.home,
+              color: Colors.white,
+
+
+
+            ),
+            title: Text("Home"),
+            selectedColor: Colors.purple,
+
+
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.map,
+                color: Colors.white),
+            title: const Text("Map"),
+
+            selectedColor: Colors.pink,
+
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.support_agent,color: Colors.white,),
+            title: const Text("Support"),
+            selectedColor: Colors.orange,
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.share,color: Colors.white,),
+            title: const Text("Share"),
+            selectedColor: Colors.teal,
+          ),
+        ],
+      ),
+      backgroundColor: const Color(0xFD010510),
       appBar: AppBar(
-
-
         title: Text("SEARCH FOR A DESTINATION" ,style: TextStyle(fontSize: 16)),
-
-        backgroundColor: Color.fromRGBO(238 ,234, 226, 100),
+        backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-
-
-
 
         actions: [
           IconButton(
@@ -88,6 +119,7 @@ class _HomeScreenState extends State<home> {
           ],
         ),
       ),
+
     );
   }
 
@@ -120,10 +152,8 @@ class _HomeScreenState extends State<home> {
               tag: data.imageName,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DetailsScreen(data: data)));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute
+                    (builder: (context)=>const pic1()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
