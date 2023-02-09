@@ -1,12 +1,16 @@
 import 'dart:math';
 import 'package:gp/Models/Models.dart';
 import 'package:flutter/material.dart';
+import 'package:gp/support.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:gp/pic2.dart';
 import 'package:gp/pic1.dart';
 import 'package:gp/pic3.dart';
 import 'package:gp/pic5.dart';
 import 'package:gp/pic4.dart';
+import 'package:gp/Map.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 
 
 class home extends StatefulWidget {
@@ -17,8 +21,12 @@ class home extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<home> {
+
+  int _selectedIndex = 0;
+
   late PageController _pageController;
   int _currentPage = 0;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -33,6 +41,7 @@ class _HomeScreenState extends State<home> {
     super.dispose();
     _pageController.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -81,9 +90,57 @@ class _HomeScreenState extends State<home> {
           ],
         ),
       ),
+      bottomNavigationBar: SalomonBottomBar(
+        currentIndex: _selectedIndex,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+            if (index == 0) {
+              Navigator.of(context).pushReplacement(MaterialPageRoute
+                (builder: (context) => const home()));
+            }
+            if (index == 1) {
+              Navigator.of(context).pushReplacement(MaterialPageRoute
+                (builder: (context) => const Map()));
+            }
+            if (index == 2) {
+              Navigator.of(context).pushReplacement(MaterialPageRoute
+                (builder: (context) => const support()));
+            }
+            if (index == 3) {
+               {Share.share('com.example.gp');}
+            }
+          });
+        },
+        items: [
+
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.purple,
+          ),
+          SalomonBottomBarItem(
+            icon: Icon(Icons.map),
+            title: Text("Map"),
+            selectedColor: Colors.orange,
+          ),
+
+          /// Profile
+          SalomonBottomBarItem(
+            icon: Icon(Icons.support_agent),
+            title: Text("Support"),
+            selectedColor: Colors.teal,
+          ),
+          SalomonBottomBarItem(
+            icon: Icon(Icons.share),
+            title: Text("Share"),
+            selectedColor: Colors.pink,
+          ),
+        ],
+      ),
     );
   }
-
   Widget carouselView(int index) {
     return AnimatedBuilder(
       animation: _pageController,
@@ -100,6 +157,7 @@ class _HomeScreenState extends State<home> {
         );
       },
     );
+
   }
 
   Widget carouselCard(DataModel data) {
@@ -242,4 +300,5 @@ class CustomSearchDelegate extends SearchDelegate {
       },
     );
   }
+
 }

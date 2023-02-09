@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> {
                     Align(
                       child: Image.network(
                         'https://i.pinimg.com/originals/f4/28/00/f42800eb7fa1469bb626906405fa58e2.gif',
-                        width: 401.4,
-                        height: 818.4,
+                        width: 420.4,
+                        height: 900.4,
                         fit: BoxFit.cover,
                       ),
 
@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
                           'Available with',
                           style: TextStyle(fontSize: 22.0,color: Colors.white,fontFamily: 'afnan'),
                         ),
-                        const SizedBox(width: 20.0, height: 100.0),
+                        const SizedBox(width: 30.0, height: 100.0),
                         DefaultTextStyle(
                           style: const TextStyle(
                             fontSize: 20.0,

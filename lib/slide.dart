@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-
 import 'package:gp/main.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:gp/NearBy.dart';
+
+//NFC
+import 'package:gp/Nfc.dart';
 
 
 class slide extends StatefulWidget {
@@ -58,8 +60,23 @@ class _slideState extends State<slide> {
                               ),
                             );
 
+                            /* Here is the code to enable NFC tag in our application
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const nfc());
+                              ]
+                              ),
+                              ),
+                            );
+
+                            */
+
 
 
                           }))
 
-              )]));}}
+              )])
+
+
+
+    );}}
